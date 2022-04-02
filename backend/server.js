@@ -5,9 +5,12 @@ const mongoose = require("mongoose");
 const Tinder = require("./mongoose_connection/mongoose");
 const port = process.env.PORT || 8000;
 
+
+app.use(express.json())
+app.use(cors())
+
 app.get("/", (req, res, next) => {
   res.status(200).send("sending from backend");
-  console.log("hey");
 });
 app.listen(port, () => {
   console.log("listening on port " + port);
